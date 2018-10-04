@@ -1,0 +1,35 @@
+body{
+    background-color: black;
+    color: white;
+}
+
+header{
+    background-color: #60005b;
+}
+
+.bg-violet{
+    background-color: #60005b;
+}
+
+.bg-pink{
+    background-color: pink;
+}
+
+.logo:hover{
+    opacity: 0.5;
+}
+
+.img-site{
+    height: 200px;
+    width: 250px;
+}
+
+.logo-company{
+    height: 100px;
+    width: 150px;
+}
+
+.font-italic{
+    font-size: 12px;
+}
+
