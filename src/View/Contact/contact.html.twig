@@ -49,7 +49,11 @@
                             {% endif %}
                         </div>
                     </div>
-                    <input class="btn btn-dark bg-black" type="submit" value="Envoyer">
+                    {% if inputValue['recaptcha'] is defined and inputValue['recaptcha'] == false %}
+                        <small class="text-danger">Merci de cocher "Je ne suis pas un robot"</small>
+                    {% endif %}
+                    <div class="g-recaptcha" data-sitekey="6Lf6sHMUAAAAAHPHZLQuv_ZadwdwvhcT0sB2rwt5"></div>
+                    <input class="btn btn-dark bg-black mt-3" type="submit" value="Envoyer">
                 </form>
             </div>
         </div>
