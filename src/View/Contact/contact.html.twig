@@ -1,0 +1,38 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+
+    <div class="card border-light mb-3 bg-pink">
+        <h2 class="card-header bg-violet"><b class="font-weight-bold">Contactez-moi</b></h2>
+        <div class="card-body text-dark">
+            <h5 class="my-4">Je suis actuellement en CDI mais si vous souhaitez avoir plus d'informations, n'hésitez pas à me contacter.</h5>
+            <form action="/send" method="post">
+                <div class="row mt-3">
+                    <div class="form-group col-md-4 offset-md-2">
+                        <input type="text" class="form-control" name="firstName" placeholder="Prénom *" required>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <input type="text" class="form-control" name="lastName" placeholder="Nom *" required>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="form-group col-md-4 offset-md-2">
+                        <input type="email" class="form-control" name="mail" placeholder="Email *" >
+                    </div>
+                    <div class="form-group col-md-4">
+                        <input type="text" class="form-control" name="phoneNumber" placeholder="Téléphone">
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="form-group col-md-8 offset-md-2">
+                        <textarea class="form-control" rows="5" placeholder="Votre message *" name="message" required></textarea>
+                    </div>
+                </div>
+                <input class="btn btn-primary bg-violet" type="submit" value="Envoyer">
+            </form>
+        </div>
+    </div>
+
+{% endblock %}
+
+

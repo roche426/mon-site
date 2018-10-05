@@ -1,19 +1,27 @@
 body{
-    background-color: black;
-    color: white;
+    background-color: #efeff0;
 }
 
 header{
-    background-color: #60005b;
+    background-color: black;
+    border-bottom: solid 5px #dfb100;
+    color: #dfb100;
 }
 
-.bg-violet{
-    background-color: #60005b;
+.section-title{
+    background-color: black;
+    border-bottom: solid 5px #dfb100;
 }
 
-.bg-pink{
-    background-color: pink;
+.section-title > h2{
+    text-shadow: 1px 0 0 black, -1px 0 0 black, 0 1px 0 black, 0 -1px 0 black;
 }
+
+.bg-black{
+    background-color: black;
+    color: #dfb100;
+}
+
 
 .logo:hover{
     opacity: 0.5;
@@ -32,4 +40,15 @@ header{
 .font-italic{
     font-size: 12px;
 }
+
+.menu a{
+    color: lightgray;
+    text-decoration: none;
+}
+
+.menu h4:hover, .active{
+    color: #dfb100;
+    border-bottom: 10px solid #dfb100;
+}
+
 

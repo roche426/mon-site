@@ -18,6 +18,7 @@ class CurriculumController extends AbstractController
 
     public function index()
     {
-        return $this->twig->render('index.html.twig');
+        $page = 'home';
+        return $this->twig->render('index.html.twig', ['page' => $page]);
     }
 }
