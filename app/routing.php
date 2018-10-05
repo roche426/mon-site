@@ -13,4 +13,8 @@ $routes = [
     'Curriculum' => [ // Controller
         ['index', '/', 'GET'], // action, url, method
     ],
+    'Contact' => [ // Controller
+        ['index', '/contact', ['GET', 'POST']], // action, url, method
+
+    ],
 ];

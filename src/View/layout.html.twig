@@ -4,6 +4,7 @@
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="google-site-verification" content="fJFtLHFPz5k-jyHu3Jbg4yVdvI9BTNeU_EwGd9lWDGA" />
 
         <title> Aurélien ROCHE - {% block title %}Développeur{% endblock %}</title>
 
@@ -12,18 +13,39 @@
 
         <link rel="stylesheet" href="/assets/css/styles.css">
 
+        <script src='https://www.google.com/recaptcha/api.js'></script>
     </head>
 
     <body>
 
         <header>
-            <div class="text-white pt-5 pb-5 mb-5" align="center">
+            <div class="pt-5 mb-2" align="center">
                 <h1><b class="font-weight-bold">Aurélien ROCHE - Développeur WEB</b></h1>
+                <div class="row mt-5 menu">
+                    <div class="col-md-3 offset-md-3">
+                        <a href="/"><h4 class="font-weight-bold {{ page == 'home' ? 'active' }}">A propos</h4></a>
+                    </div>
+                    <div class="col-md-3">
+                        <a href="/contact"><h4 class="font-weight-bold {{ page == 'contact' ? 'active' }}">Contact</h4></a>
+                    </div>
+                    <!--
+                    <div class="col-md-2">
+                        <a href="#"><h4 class="font-weight-bold">Passion</h4></a>
+                    </div>
+                    -->
+                </div>
             </div>
         </header>
 
         <div class="container pb-5" align="center">
+            {% if message %}
+                <div class="alert bg-black text-center mt-4">
+                    <h5 class="font-weight-bold">{{ message }}</h5>
+                </div>
+            {% endif %}
+
             {% block content %}{% endblock %}
+
         </div>
 
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"

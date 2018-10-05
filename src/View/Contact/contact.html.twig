@@ -1,0 +1,64 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+
+    <div class="row mb-5 mt-5">
+        <div class="col-md-6 pt-2 section-title">
+            <h2 class="bg-black"><b class="font-weight-bold">Contact</b></h2>
+        </div>
+        <div class="card border-light mb-3 bg-pink">
+            <div class=" card-body text-dark">
+                <h5 class="my-4 px-5 mx-5">Je suis actuellement en CDI mais si vous souhaitez avoir plus d'informations, n'hésitez pas à me contacter.</h5>
+                <form action="/contact" method="post">
+                    <div class="row mt-3">
+                        <div class="form-group col-md-4 offset-md-2">
+                            <input type="text" class="form-control" name="firstName" placeholder="Prénom *" required
+                            {% if inputValue['firstName'] is not empty%} value="{{ inputValue['firstName'] }}" {% endif %}/>
+                            {% if inputValue['firstName'] is defined and inputValue['firstName'] is empty %}
+                                <small class="text-danger">Ce champs ne doit pas être vide</small>
+                            {% endif %}
+
+                        </div>
+                        <div class="form-group col-md-4">
+                            <input type="text" class="form-control" name="lastName" placeholder="Nom *" required
+                            {% if inputValue['lastName'] is not empty%} value="{{ inputValue['lastName'] }}" {% endif %}/>
+                            {% if inputValue['lastName'] is defined and inputValue['lastName'] is empty %}
+                                <small class="text-danger">Ce champs ne doit pas être vide</small>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="form-group col-md-4 offset-md-2">
+                            <input type="email" class="form-control" name="mail" placeholder="Email *" required
+                            {% if inputValue['mail'] is not empty%} value="{{ inputValue['mail'] }}" {% endif %}/>
+                            {% if inputValue['mail'] is defined and inputValue['mail'] is empty %}
+                                <small class="text-danger">Ce champs ne doit pas être vide</small>
+                            {% endif %}
+                        </div>
+                        <div class="form-group col-md-4">
+                            <input type="text" class="form-control" name="phoneNumber" placeholder="Téléphone"
+                            {% if inputValue['phoneNumber'] is not empty%} value="{{ inputValue['phoneNumber'] }}" {% endif %}/>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="form-group col-md-8 offset-md-2">
+                            <textarea class="form-control" rows="5" placeholder="Votre message *" name="message" required
+                                >{% if inputValue['message'] is not empty %} {{ inputValue['message'] }} {% endif %}</textarea>
+                            {% if inputValue['message'] is defined and inputValue['message'] is empty %}
+                                <small class="text-danger">Ce champs ne doit pas être vide</small>
+                            {% endif %}
+                        </div>
+                    </div>
+                    {% if inputValue['recaptcha'] is defined and inputValue['recaptcha'] == false %}
+                        <small class="text-danger">Merci de cocher "Je ne suis pas un robot"</small>
+                    {% endif %}
+                    <div class="g-recaptcha" data-sitekey="6Lf6sHMUAAAAAHPHZLQuv_ZadwdwvhcT0sB2rwt5"></div>
+                    <input class="btn btn-dark bg-black mt-3" type="submit" value="Envoyer">
+                </form>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+
