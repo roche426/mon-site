@@ -22,10 +22,10 @@
             <div class="pt-5 mb-2" align="center">
                 <h1><b class="font-weight-bold">Aurélien ROCHE - Développeur WEB</b></h1>
                 <div class="row mt-5 menu">
-                    <div class="col-md-3 offset-md-3">
+                    <div class="col-sm-3 offset-sm-3 col-6">
                         <a href="/"><h4 class="font-weight-bold {{ page == 'home' ? 'active' }}">A propos</h4></a>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-sm-3 col-6">
                         <a href="/contact"><h4 class="font-weight-bold {{ page == 'contact' ? 'active' }}">Contact</h4></a>
                     </div>
                     <!--
@@ -37,12 +37,13 @@
             </div>
         </header>
 
+        {% if message %}
+            <div class="alert alert-success text-center">
+                <h5 class="font-weight-bold">{{ message }}</h5>
+            </div>
+        {% endif %}
+
         <div class="container pb-5" align="center">
-            {% if message %}
-                <div class="alert bg-black text-center mt-4">
-                    <h5 class="font-weight-bold">{{ message }}</h5>
-                </div>
-            {% endif %}
 
             {% block content %}{% endblock %}
 
