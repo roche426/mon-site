@@ -1,0 +1,33 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+    <div class="col-md-12 card border-light mt-5">
+        <div class="card-body text-dark my-5">
+            <h2 class="my-4 mx-5 bg-black py-2"><b class="font-weight-bold">Administration</b></h2>
+            <form action="/connexion" method="post">
+                <div class="row my-5">
+                    <div class="form-group col-md-6 offset-md-3">
+                        <input type="email" class="form-control" name="email" placeholder="Email *" required
+                        {% if errorMessage['inputEmail'] is not empty %} value="{{ errorMessage['inputEmail'] }}" {% endif %}/>
+                        {% if errorMessage['inputEmail'] is defined and errorMessage['inputEmail'] is empty %}
+                            <small class="text-danger">Ce champs ne doit pas être vide</small>
+                        {% elseif errorMessage['inputEmail'] is defined and errorMessage['inputPassword'] is not defined %}
+                            <small class="text-danger">Adresse email invalide</small>
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="row my-5">
+                    <div class="form-group col-md-6 offset-md-3">
+                        <input type="password" class="form-control" name="password" placeholder="Mot de passe *" required/>
+                        {% if errorMessage['inputPassword'] is defined and errorMessage['inputPassword'] is empty %}
+                            <small class="text-danger">Ce champs ne doit pas être vide</small>
+                        {% elseif errorMessage['inputPassword'] is defined %}
+                            <small class="text-danger">Mot de passe invalide</small>
+                        {% endif %}
+                    </div>
+                </div>
+                <input class="btn btn-dark bg-black mt-2" type="submit" value="Valider">
+            </form>
+        </div>
+    </div>
+{% endblock %}

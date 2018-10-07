@@ -15,6 +15,10 @@ $routes = [
     ],
     'Contact' => [ // Controller
         ['index', '/contact', ['GET', 'POST']], // action, url, method
-
+    ],
+    'User' => [ // Controller
+        ['userConnexion', '/connexion', ['GET', 'POST']], // action, url, method
+        ['index', '/admin', ['GET', 'POST']], // action, url, method
+        ['logout', '/logout', ['GET', 'POST']], // action, url, method
     ],
 ];

@@ -9,6 +9,8 @@
 
 namespace Controller;
 
+use Model\ContactManager;
+
 /**
  * Class ContactController
  *
@@ -37,15 +39,21 @@ class ContactController extends AbstractController
             if (!empty($_POST['firstName']) && !empty($_POST['lastName']) && !empty($_POST['mail']) && !empty($_POST['message'])
             && $decode['success'] == true) {
 
-                $firstName = htmlentities($_POST['firstName']);
-                $lastName = htmlentities($_POST['lastName']);
-                $email = htmlentities($_POST['mail']);
-                $messageContact = htmlentities($_POST['message']);
-                $numberPhone = htmlentities($_POST['phoneNumber']);
+                $contact = [
+                    'firstName' => htmlentities($_POST['lastName']),
+                    'lastName' => htmlentities($_POST['firstName']),
+                    'email' => htmlentities($_POST['mail']),
+                    'messageContact' => htmlentities($_POST['message']),
+                    'numberPhone' => htmlentities($_POST['phoneNumber']),
+                    'date' => date('Y/m/d')
+                ];
+
+                $contactManager = new ContactManager();
+                $contactManager->addMessage($contact);
 
                 mail('aurelien.roche1@laposte.net',
-                    "Mon-site : Message de $firstName $lastName : $email/ $numberPhone",
-                    $messageContact
+                    'Mon-site : Message de ' .$contact['firstName'] .' ' .$contact['lastName'] .' ' .$contact['email'] .' ' .$contact['numberPhone'],
+                    $contact['messageContact']
                 );
 
                 $message = 'Votre message a bien été envoyé, je vous répondrai dans les plus brefs délais';
