@@ -35,4 +35,13 @@ class ContactManager extends AbstractManager
         $statement->setFetchMode(\PDO::FETCH_CLASS, $this->className);
         $statement->execute();
     }
+
+    public function deleteContact($id)
+    {
+        // prepared request
+        $statement = $this->pdoConnection->prepare("DELETE FROM  $this->table WHERE `id`=:id");
+        $statement->bindValue('id', $id, \PDO::PARAM_INT);
+        $statement->setFetchMode(\PDO::FETCH_CLASS, $this->className);
+        $statement->execute();
+    }
 }

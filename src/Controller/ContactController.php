@@ -78,4 +78,11 @@ class ContactController extends AbstractController
         ]);
     }
 
+    public function deleteContact($id)
+    {
+        $contactManager = new ContactManager();
+        $contactManager->deleteContact($id);
+        header('location: /admin');
+    }
+
 }
