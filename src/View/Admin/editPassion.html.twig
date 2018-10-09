@@ -1,9 +1,7 @@
 {% extends 'layout.html.twig' %}
 
 {% block user %}
-    <div class="col-md-1 offset-md-1">
-        <a class="btn bg-light text-dark" href="/logout">logout</a>
-    </div>
+    {% include('Admin/logout.html.twig') %}
 {% endblock %}
 
 {% block content %}
@@ -61,8 +59,8 @@
                             {% endif %}
                         </div>
                     </div>
-                    <input class="btn btn-dark bg-black mt-4" type="submit" value="Modifier">
                     <a class="btn btn-danger mt-4" href="/admin">Retour</a>
+                    <input class="btn btn-dark bg-black mt-4" type="submit" value="Modifier">
                 </form>
             </div>
         </div>

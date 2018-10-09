@@ -1,9 +1,7 @@
 {% extends 'layout.html.twig' %}
 
 {% block user %}
-    <div class="col-md-1 offset-md-1">
-        <a class="btn bg-light text-dark" href="/logout">logout</a>
-    </div>
+    {% include('Admin/logout.html.twig') %}
 {% endblock %}
 
 {% block content %}
