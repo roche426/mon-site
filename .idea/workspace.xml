@@ -2,15 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="304656d2-46aa-42b2-b45a-3d93fad3f645" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/db.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/db.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/routing.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/routing.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Passion.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Passion.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/PassionManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/PassionManager.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/Admin/addPassion.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Admin/addPassion.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/Admin/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Admin/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/Admin/welcome.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Admin/welcome.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/layout.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/layout.html.twig" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -67,7 +58,7 @@
           <entry key="js" value="185" />
           <entry key="json" value="12" />
           <entry key="php" value="6410" />
-          <entry key="twig" value="5300" />
+          <entry key="twig" value="5311" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -77,7 +68,7 @@
           <entry key="PHP" value="6369" />
           <entry key="PLAIN_TEXT" value="43" />
           <entry key="SQL" value="41" />
-          <entry key="Twig" value="5300" />
+          <entry key="Twig" value="5311" />
           <entry key="composer.json" value="12" />
         </counts>
       </usages-collector>
@@ -103,11 +94,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/View/layout.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="310">
-              <caret line="34" selection-start-line="34" selection-end-line="34" />
+            <state relative-caret-position="181">
+              <caret line="34" column="23" selection-start-line="34" selection-start-column="23" selection-end-line="34" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -121,7 +112,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/db.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="108">
@@ -218,13 +209,13 @@
         <option value="$PROJECT_DIR$/src/Model/PassionManager.php" />
         <option value="$PROJECT_DIR$/src/Controller/UserController.php" />
         <option value="$PROJECT_DIR$/src/Controller/PassionController.php" />
-        <option value="$PROJECT_DIR$/src/View/layout.html.twig" />
         <option value="$PROJECT_DIR$/src/View/Admin/addPassion.html.twig" />
         <option value="$PROJECT_DIR$/src/View/Admin/editPassion.html.twig" />
         <option value="$PROJECT_DIR$/src/View/Admin/index.html.twig" />
         <option value="$PROJECT_DIR$/src/View/Admin/welcome.html.twig" />
         <option value="$PROJECT_DIR$/app/routing.php" />
         <option value="$PROJECT_DIR$/app/db.php" />
+        <option value="$PROJECT_DIR$/src/View/layout.html.twig" />
       </list>
     </option>
   </component>
@@ -387,12 +378,12 @@
       <workItem from="1538894830956" duration="30828000" />
       <workItem from="1538927358377" duration="5516000" />
       <workItem from="1538988144275" duration="4126000" />
-      <workItem from="1539068553305" duration="5883000" />
+      <workItem from="1539068553305" duration="6708000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="85762000" />
+    <option name="totallyTimeSpent" value="86587000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -407,7 +398,7 @@
     <frame x="-1" y="-11" width="1922" height="1041" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19743863" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19743863" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -420,7 +411,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.4994664" visible="true" weight="0.4" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.4994664" visible="true" weight="0.4" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50053364" side_tool="true" weight="0.20552486" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -637,13 +628,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/layout.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="310">
-          <caret line="34" selection-start-line="34" selection-end-line="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/View/Admin/addPassion.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
@@ -683,6 +667,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
           <caret line="17" column="32" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/View/layout.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="181">
+          <caret line="34" column="23" selection-start-line="34" selection-start-column="23" selection-end-line="34" selection-end-column="23" />
         </state>
       </provider>
     </entry>
