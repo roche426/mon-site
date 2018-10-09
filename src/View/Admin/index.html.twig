@@ -61,7 +61,7 @@
                     <td class="text-center">{{ passion.date | date('d/m/Y') }}</td>
                     <td class="text-center">{{ passion.name }}</td>
                     <td class="text-center">{{ passion.distance}} km</td>
-                    <td class="text-center">{{ passion.running_time }}</td>
+                    <td class="text-center">{{ passion.running_time | date("G\\h\\ i\\m\\n\\ s\\s")}}</td>
                     <td class="text-center">{{ passion.rank }}<sup>ème</sup></td>
                     <td class="text-center">{{ passion.participants }}</td>
                     <td class="text-center">

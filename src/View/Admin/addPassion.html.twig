@@ -52,7 +52,7 @@
                     <div class="row mt-3">
                         <div class="form-group col-md-4 offset-md-2">
                             <label>Temps</label>
-                            <input type="time" class="form-control" name="runningTime" placeholder="Temps *"
+                            <input type="time" class="form-control" name="runningTime" placeholder="Temps *" step='1' min="00:00:00"
                                     {% if inputValue['runningTime'] is not empty%} value="{{ inputValue['runningTime'] }}" {% endif %}/>
                             {% if inputValue['runningTime'] is defined and inputValue['runningTime'] is empty %}
                                 <small class="text-danger">Ce champs ne doit pas être vide</small>
