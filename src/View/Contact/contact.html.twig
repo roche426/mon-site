@@ -8,7 +8,9 @@
         </div>
         <div class="card border-light mb-3 bg-pink">
             <div class=" card-body text-dark">
-                <h5 class="my-4 px-5 mx-5">Je suis actuellement en CDI mais si vous souhaitez avoir plus d'informations, n'hésitez pas à me contacter.</h5>
+                <h5 class="my-4 mx-5">Je suis actuellement <b class="font-weight-bold">en CDI</b> mais si vous souhaitez avoir plus d'informations,
+                    <b class="font-weight-bold">n'hésitez pas à me contacter.</b>
+                </h5>
                 <form action="/contact" method="post">
                     <div class="row mt-3">
                         <div class="form-group col-md-4 offset-md-2">
@@ -52,8 +54,8 @@
                     {% if inputValue['recaptcha'] is defined and inputValue['recaptcha'] == false %}
                         <small class="text-danger">Merci de cocher "Je ne suis pas un robot"</small>
                     {% endif %}
-                    <div class="g-recaptcha" data-sitekey="6Lf6sHMUAAAAAHPHZLQuv_ZadwdwvhcT0sB2rwt5"></div>
-                    <input class="btn btn-dark bg-black mt-3" type="submit" value="Envoyer">
+                    <div class="g-recaptcha mt-3" data-sitekey="6Lf6sHMUAAAAAHPHZLQuv_ZadwdwvhcT0sB2rwt5"></div>
+                    <input class="btn btn-dark bg-black mt-4" type="submit" value="Envoyer">
                 </form>
             </div>
         </div>

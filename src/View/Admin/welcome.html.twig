@@ -1,0 +1,18 @@
+{% extends 'layout.html.twig' %}
+
+{% block user %}
+    <div class="col-md-1 offset-md-1">
+        <a class="btn bg-light text-dark" href="/logout">logout</a>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="col-md-12 card border-light mt-5">
+        <div class="card-body text-dark my-5">
+            <h2 class="my-4 mx-5 bg-black py-2"><b class="font-weight-bold">Bienvenue</b></h2>
+            <h4 class="mt-4"><b class="font-weight-bold">Bonjour Aurélien</b></h4>
+                <a class="btn bg-black mt-4" href="/admin">Accéder à l'administration</a>
+        </div>
+    </div>
+{% endblock %}
+
