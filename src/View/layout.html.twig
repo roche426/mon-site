@@ -19,20 +19,18 @@
     <body>
 
         <header>
-            <div class="pt-5 mb-2" align="center">
+            <div class="container-fluid pt-5 mb-2" align="center">
                 <h1><b class="font-weight-bold">Aurélien ROCHE - Développeur WEB</b></h1>
                 <div class="row mt-5 menu">
-                    <div class="col-sm-3 offset-sm-3">
+                    <div class="col-sm-2 offset-sm-3">
                         <a href="/"><h4 class="font-weight-bold {{ page == 'home' ? 'active' }}">A propos</h4></a>
                     </div>
-                    <div class="col-sm-3">
+                    <div class="col-sm-2">
                         <a href="/contact"><h4 class="font-weight-bold {{ page == 'contact' ? 'active' }}">Contact</h4></a>
                     </div>
-                    <!--
                     <div class="col-md-2">
                         <a href="/passion"><h4 class="font-weight-bold  {{ page == 'passion' ? 'active' }}">Passion</h4></a>
                     </div>
-                    -->
                     {% block user %}
                     {% endblock %}
                 </div>

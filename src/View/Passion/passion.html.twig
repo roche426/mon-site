@@ -4,14 +4,45 @@
 
     <div class="row mt-5">
         <div class="col-md-6 pt-2 section-title">
-            <h2 class="bg-black"><b class="font-weight-bold">Passions</b></h2>
+            <h2 class="bg-black"><b class="font-weight-bold">Passion</b></h2>
         </div>
     </div>
     <div class="row mb-5">
-        <div class="col card border-light mb-3 bg-pink">
-            <div class=" card-body text-dark">
+        <div class="card border-light mb-3">
+            <div class="row card-body text-dark">
+                <div class="col-md-3 border-right">
+                    <img class="img-thumbnail bg-black my-2" src="assets/images/moi-sport.jpg" style="height: 200px; width: 120px">
+                    <a class="btn btn-dark bg-black my-3"target="_blank" href="https://www.strava.com/athletes/19952858">
+                        <img class="mr-2" src="assets/images/strava.png"><b class="font-weight-bold">Mon entrainement</b>
+                    </a>
+                </div>
+                <div class="col-md-9 card-text text-justify">
+                    <p> En plus d'être <b class="font-weight-bold">Développeur Web</b>, je suis un passionné de <b class="font-weight-bold">Sport.</b></p>
+                    <p>J'ai pratiqué pendant une quinzaine d'années le  <b class="font-weight-bold">Football</b> dans plusieurs clubs,
+                    <b class="font-weight-bold">Lamure sur Azergues, Villefranche sur Saône et Les Martres de Veyre(63).</b></p>
+                    <p>Puis en 2015, je me lance <b class="font-weight-bold">le challenge de finir le Marathon de Lyon</b> en moins de 3h30.<br>
+                        Depuis la <b class="font-weight-bold">Course à Pied</b> est devenue <b class="font-weight-bold">une véritable passion</b>
+                        où chaque course est <b class="font-weight-bold"> un nouveau défi et l'occassion de se surpasser.</b>
+                    </p>
+                    <p>J'ai décidé d'intégrer <b class="font-weight-bold">cette passion sur mon site</b> par les <b class="font-weight-bold">valeurs
+                        apportées par ce sport dans ma vie.</b><br>
+                        En effet, il faut <b class="font-weight-bold">savoir travailler pour progresser</b>, <b class="font-weight-bold">savoir
+                        prendre des risques pour réussir</b> un objectif et donc <b class="font-weight-bold">savoir se remettre en question</b>
+                        quand celui-ci n'a pas été atteint.<br>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-5">
+        <div class="col-md-6 pt-2 section-title">
+            <h2 class="bg-black"><b class="font-weight-bold">Passion</b></h2>
+        </div>
+    </div>
+    <div class="row mb-5">
+        <div class="col card border-light mb-3">
+            <div class="card-body text-dark">
                 <div class="table-responsive">
-                    <h5>Mes courses</h5>
                     <table class="table">
                         <thead class="bg-black">
                         <tr>
@@ -28,7 +59,7 @@
                                 <td class="text-center">{{ passion.date | date('d/m/Y')}}</td>
                                 <td class="text-center">{{ passion.name }}</td>
                                 <td class="text-center">{{ passion.running_time }}</td>
-                                <td class="text-center">{{ passion.rank }}</td>
+                                <td class="text-center">{{ passion.rank }}<sup>ème</sup></td>
                                 <td class="text-center">{{ passion.participants }}</td>
                             </tr>
                         {% endfor %}
@@ -38,7 +69,6 @@
             </div>
         </div>
     </div>
-
 {% endblock %}
 
 
