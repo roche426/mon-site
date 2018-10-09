@@ -1,0 +1,44 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+
+    <div class="row mt-5">
+        <div class="col-md-6 pt-2 section-title">
+            <h2 class="bg-black"><b class="font-weight-bold">Passions</b></h2>
+        </div>
+    </div>
+    <div class="row mb-5">
+        <div class="col card border-light mb-3 bg-pink">
+            <div class=" card-body text-dark">
+                <div class="table-responsive">
+                    <h5>Mes courses</h5>
+                    <table class="table">
+                        <thead class="bg-black">
+                        <tr>
+                            <th scope="col" class="text-center" >Date</th>
+                            <th scope="col" class="text-center" >Course</th>
+                            <th scope="col" class="text-center" >Temps</th>
+                            <th scope="col" class="text-center" >Classement</th>
+                            <th scope="col" class="text-center" >Participants</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for passion in passions %}
+                            <tr>
+                                <td class="text-center">{{ passion.date | date('d/m/Y')}}</td>
+                                <td class="text-center">{{ passion.name }}</td>
+                                <td class="text-center">{{ passion.running_time }}</td>
+                                <td class="text-center">{{ passion.rank }}</td>
+                                <td class="text-center">{{ passion.participants }}</td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+

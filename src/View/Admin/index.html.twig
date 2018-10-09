@@ -1,63 +1,76 @@
 {% extends 'layout.html.twig' %}
 
+{% block user %}
+    <div class="col-md-1 offset-md-1">
+        <a class="btn bg-light text-dark" href="/logout">logout</a>
+    </div>
+{% endblock %}
 {% block contentAdmin %}
-    <a href="/logout">logout</a>
 
     <h2 class="bg-black"><b class="font-weight-bold">Message reçu</b></h2>
-    <table class="table">
-        {% if contacts %}
-        <thead>
-        <tr>
-            <th scope="col" class="text-center">Date</th>
-            <th scope="col" class="text-center">Expéditeur</th>
-            <th scope="col" class="text-center">Contact</th>
-            <th scope="col" class="text-center">Message</th>
-            <th scope="col" class="text-center"></th>
-        </tr>
-        </thead>
-        <tbody>
-        {% for contact in contacts %}
-        <tr>
-            <td class="text-center">{{ contact.date }}</td>
-            <td class="text-center">{{ contact.firstname }} {{ contact.lastname }}</td>
-            <td class="text-center">{{ contact.email }} / {{ contact.phone }}</td>
-            <td class="text-center">{{ contact.message }}</td>
-            <td class="text-center"><a class="logo alert-delete" href="/admin/delete/{{ contact.id }}"><img src="assets/images/delete.png"/></a></td>
-        </tr>
-        {% endfor %}
-        </tbody>
-        {% else %}
-            <h5>Aucun nouveau message</h5>
-        {% endif %}
-    </table>
+    <div class="table-responsive">
 
-    <h2 class="py-2 bg-black"><b class="font-weight-bold">Liste des courses </b>
-        <a href="#" class="btn btn-light text-dark ml-2">Course</a>
+        <table class="table">
+            {% if contacts %}
+                <thead>
+                <tr>
+                    <th scope="col" class="text-center">Date</th>
+                    <th scope="col" class="text-center">Expéditeur</th>
+                    <th scope="col" class="text-center">Contact</th>
+                    <th scope="col" class="text-center">Message</th>
+                    <th scope="col" class="text-center"></th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for contact in contacts %}
+                    <tr>
+                        <td class="text-center">{{ contact.date }}</td>
+                        <td class="text-center">{{ contact.firstname }} {{ contact.lastname }}</td>
+                        <td class="text-center">{{ contact.email }} / {{ contact.phone }}</td>
+                        <td class="text-center">{{ contact.message }}</td>
+                        <td class="text-center"><a class="logo alert-delete" href="/admin/delete-contact/{{ contact.id }}">
+                            <img src="assets/images/delete.png"/></a>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            {% else %}
+                <h5>Aucun nouveau message</h5>
+            {% endif %}
+        </table>
+    </div>
+    <h2 class="py-3 bg-black"><b class="font-weight-bold">Liste des courses </b>
+        <a href="/admin/add-passion" class="btn btn-light text-dark ml-2"><img src="assets/images/plus.png"> Course</a>
     </h2>
-    <table class="table">
-        <thead>
-        <tr>
-            <th scope="col" class="text-center" >Date</th>
-            <th scope="col" class="text-center" >Course</th>
-            <th scope="col" class="text-center" >Type</th>
-            <th scope="col" class="text-center" >Temps</th>
-            <th scope="col" class="text-center" >Classement</th>
-            <th scope="col" class="text-center" >Participants</th>
-            <th scope="col" class="text-center" ></th>
-        </tr>
-        </thead>
-        <tbody>
-        {% for passion in passions %}
-        <tr>
-            <td class="text-center">{{ passion.date | date('d/m/Y')}}</td>
-            <td class="text-center">{{ passion.name }}</td>
-            <td class="text-center">{{ passion.type }}</td>
-            <td class="text-center">{{ passion.running_time }}</td>
-            <td class="text-center">{{ passion.rank }}</td>
-            <td class="text-center">{{ passion.participants }}</td>
-            <td class="text-center"><a class="logo" href="#"><img src="assets/images/update.png"/></a></td>
-        </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col" class="text-center">Date</th>
+                <th scope="col" class="text-center">Course</th>
+                <th scope="col" class="text-center">Distance</th>
+                <th scope="col" class="text-center">Temps</th>
+                <th scope="col" class="text-center">Classement</th>
+                <th scope="col" class="text-center">Participants</th>
+                <th scope="col" class="text-center"></th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for passion in passions %}
+                <tr>
+                    <td class="text-center">{{ passion.date | date('d/m/Y') }}</td>
+                    <td class="text-center">{{ passion.name }}</td>
+                    <td class="text-center">{{ passion.distance}} km</td>
+                    <td class="text-center">{{ passion.running_time }}</td>
+                    <td class="text-center">{{ passion.rank }}<sup>ème</sup></td>
+                    <td class="text-center">{{ passion.participants }}</td>
+                    <td class="text-center">
+                        <a class="logo" href="/admin/edit-passion/{{ passion.id }}"><img src="assets/images/update.png"/></a>
+                        <a class="logo alert-delete" href="/admin/delete-passion/{{ passion.id }}"><img src="assets/images/delete.png"/></a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
 {% endblock %}

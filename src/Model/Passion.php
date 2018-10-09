@@ -15,8 +15,8 @@ class Passion
     private $id;
     private $date;
     private $name;
-    private $type;
     private $runningTime;
+    private $distance;
     private $rank;
     private $participants;
 
@@ -71,22 +71,6 @@ class Passion
     /**
      * @return mixed
      */
-    public function getType()
-    {
-        return $this->type;
-    }
-
-    /**
-     * @param mixed $type
-     */
-    public function setType($type)
-    {
-        $this->type = $type;
-    }
-
-    /**
-     * @return mixed
-     */
     public function getRunningTime()
     {
         return $this->runningTime;
@@ -130,6 +114,22 @@ class Passion
     public function setParticipants($participants)
     {
         $this->participants = $participants;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDistance()
+    {
+        return $this->distance;
+    }
+
+    /**
+     * @param mixed $distance
+     */
+    public function setDistance($distance)
+    {
+        $this->distance = $distance;
     }
 
 

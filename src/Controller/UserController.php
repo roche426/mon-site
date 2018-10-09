@@ -85,50 +85,6 @@ class UserController extends AbstractController
 
     }
 
-    public function addPassion()
-    {
-        session_start();
-
-        if (!$_SESSION['email']) {
-            return $this->twig->render('Admin/connexion.html.twig');
-        }
-
-        if ($_POST) {
-
-            if (!empty($_POST['runningName'] && !empty($_POST['runningTime']) && !empty($_POST['runningType']) && !empty($_POST['dateRunning'])
-                && !empty($_POST['rank']) && !empty($_POST['participants']))) {
-
-                $passion = [
-                    'runningName' => $_POST['runningName'],
-                    'runningTime' => $_POST['runningTime'],
-                    'runningType' => $_POST['runningType'],
-                    'dateRunning' => $_POST['dateRunning'],
-                    'rank' => $_POST['rank'],
-                    'participants' => $_POST['participants']
-                ];
-
-                $passionManager = new PassionManager();
-                $passionManager->addPassion($passion);
-            }
-
-            else {
-                var_dump($_POST);
-
-                $errorMessage = [
-                    'runningName' => $_POST['runningName'],
-                    'runningTime' => $_POST['runningTime'],
-                    'runningType' => $_POST['runningType'],
-                    'dateRunning' => $_POST['dateRunning'],
-                    'rank' => $_POST['rank'],
-                    'participants' => $_POST['participants']
-                ];
-            }
-        }
-
-
-        return $this->twig->render('Admin/addPassion.html.twig',
-            ['inputValue' => $errorMessage]);
-    }
 
     public function logout()
     {
