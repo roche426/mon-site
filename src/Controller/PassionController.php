@@ -10,6 +10,7 @@
 namespace Controller;
 
 use Model\PassionManager;
+use Model\Validator;
 
 /**
  * Class PassionController
@@ -38,41 +39,39 @@ class PassionController extends AbstractController
             return $this->twig->render('Admin/connexion.html.twig');
         }
 
+        $errors = array();
+        $formValue = array();
+        $message = '';
+
+        $validator = new Validator();
+
         if ($_POST) {
 
-            if (!empty($_POST['runningName'] && !empty($_POST['runningTime']) && !empty($_POST['dateRunning']) && !empty($_POST['distance'])
-                && !empty($_POST['rank']) && !empty($_POST['participants']))) {
+            foreach ($_POST as $item=>$value) {
 
-                $passion = [
-                    'runningName' => $_POST['runningName'],
-                    'runningTime' => $_POST['runningTime'],
-                    'dateRunning' => $_POST['dateRunning'],
-                    'distance' => $_POST['distance'],
-                    'rank' => $_POST['rank'],
-                    'participants' => $_POST['participants']
-                ];
+                if (!$validator->blank($value)) {
+                    $errors[$item] .= 'Ce champs ne doit pas être vide ';
+                }
 
-                $passionManager = new PassionManager();
-                $passionManager->addPassion($passion);
+                if (!$validator->minNumber($value) && is_numeric($value)) {
+                    $errors[$item] .= 'La valeur minimal doit être égale à 1';
+                }
 
-                $message = 'Votre course à été ajoutée';
+                $formValue[$item] .= htmlentities($value);
             }
 
-            else {
+            if (!count(array_filter($errors))) {
 
-                $errorMessage = [
-                    'runningName' => $_POST['runningName'],
-                    'runningTime' => $_POST['runningTime'],
-                    'dateRunning' => $_POST['dateRunning'],
-                    'distance' => $_POST['distance'],
-                    'rank' => $_POST['rank'],
-                    'participants' => $_POST['participants']
-                ];
+                $passionManager = new PassionManager();
+                $passionManager->addPassion($formValue);
+
+                $message = 'Votre course à été ajoutée';
             }
         }
 
         return $this->twig->render('Admin/addPassion.html.twig', [
-            'inputValue' => $errorMessage,
+            'errors' => $errors,
+            'formValue' => $formValue,
             'message' => $message
         ]);
     }
@@ -87,44 +86,42 @@ class PassionController extends AbstractController
         }
 
         $passionManager = new PassionManager();
-        $passion = $passionManager->selectOneById($id);
+
+        $errors = array();
+        $formValue = array();
+        $message = '';
+
+        $validator = new Validator();
 
         if ($_POST) {
 
-            if (!empty($_POST['runningName'] && !empty($_POST['runningTime']) && !empty($_POST['dateRunning']) && !empty($_POST['distance'])
-                && !empty($_POST['rank']) && !empty($_POST['participants']))) {
+            foreach ($_POST as $item=>$value) {
 
-                $passion = [
-                    'name' => $_POST['runningName'],
-                    'running_time' => $_POST['runningTime'],
-                    'date' => $_POST['dateRunning'],
-                    'distance' => $_POST['distance'],
-                    'rank' => $_POST['rank'],
-                    'participants' => $_POST['participants'],
-                ];
+                if (!$validator->blank($value)) {
+                    $errors[$item] .= 'Ce champs ne doit pas être vide ';
+                }
 
-                $passionManager->editPassion($passion, $id);
+                if (!$validator->minNumber($value) && is_numeric($value)) {
+                    $errors[$item] .= 'La valeur minimal doit être égale à 1';
+                }
+
+                $formValue[$item] .= htmlentities($value);
+            }
+
+            if (!count(array_filter($errors))) {
+
+                $passionManager = new PassionManager();
+                $passionManager->editPassion($formValue, $id);
 
                 $message = 'Votre course à été modifiée';
             }
-
-            else {
-
-                $errorMessage = [
-                    'runningName' => $_POST['runningName'],
-                    'runningTime' => $_POST['runningTime'],
-                    'dateRunning' => $_POST['dateRunning'],
-                    'distance' => $_POST['distance'],
-                    'rank' => $_POST['rank'],
-                    'participants' => $_POST['participants']
-                ];
-            }
         }
 
+        $passion = $passionManager->selectOneById($id);
 
         return $this->twig->render('Admin/editPassion.html.twig', [
-            'inputValue' => $errorMessage,
             'passion' => $passion,
+            'errors' => $errors,
             'message' => $message
         ]);
     }
