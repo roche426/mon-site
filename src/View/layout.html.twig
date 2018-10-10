@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="fr">
+<html lang="fr" prefix="og: http://ogp.me/ns#">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -7,8 +7,9 @@
         <meta name="keyword" content="Développeur, Web, PHP, Symfony, Aurelien, Roche"/>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="google-site-verification" content="fJFtLHFPz5k-jyHu3Jbg4yVdvI9BTNeU_EwGd9lWDGA" />
-
         <title> Aurélien ROCHE - {% block title %}Développeur{% endblock %}</title>
+
+        {% block socialMeta %}{% endblock %}
 
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
               integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
