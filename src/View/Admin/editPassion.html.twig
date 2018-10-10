@@ -1,9 +1,10 @@
 {% extends 'layout.html.twig' %}
 
+{% block title %}Modifier une passion{% endblock %}
+{% block description %}modifier une course du site{% endblock %}
+
 {% block user %}
-    <div class="col-md-1 offset-md-1">
-        <a class="btn bg-light text-dark" href="/logout">logout</a>
-    </div>
+    {% include('Admin/logout.html.twig') %}
 {% endblock %}
 
 {% block content %}
@@ -48,7 +49,7 @@
                     <div class="row mt-3">
                         <div class="form-group col-md-4 offset-md-2">
                             <label>Temps</label>
-                            <input type="time" class="form-control" name="runningTime" value="{{ passion.running_time }}"/>
+                            <input type="time" class="form-control" name="runningTime" value="{{ passion.running_time }}" step='1' min="00:00:00"/>
                             {% if inputValue['runningTime'] is defined and inputValue['runningTime'] is empty %}
                                 <small class="text-danger">Ce champs ne doit pas être vide</small>
                             {% endif %}
@@ -61,8 +62,8 @@
                             {% endif %}
                         </div>
                     </div>
-                    <input class="btn btn-dark bg-black mt-4" type="submit" value="Modifier">
                     <a class="btn btn-danger mt-4" href="/admin">Retour</a>
+                    <input class="btn btn-dark bg-black mt-4" type="submit" value="Modifier">
                 </form>
             </div>
         </div>

@@ -1,10 +1,12 @@
 {% extends 'layout.html.twig' %}
 
+{% block title %}Administration{% endblock %}
+{% block description %}La page principale de l'adminstration avec les messages reçus et la liste des courses{% endblock %}
+
 {% block user %}
-    <div class="col-md-1 offset-md-1">
-        <a class="btn bg-light text-dark" href="/logout">logout</a>
-    </div>
+    {% include('Admin/logout.html.twig') %}
 {% endblock %}
+
 {% block contentAdmin %}
 
     <h2 class="bg-black"><b class="font-weight-bold">Message reçu</b></h2>
@@ -61,7 +63,7 @@
                     <td class="text-center">{{ passion.date | date('d/m/Y') }}</td>
                     <td class="text-center">{{ passion.name }}</td>
                     <td class="text-center">{{ passion.distance}} km</td>
-                    <td class="text-center">{{ passion.running_time }}</td>
+                    <td class="text-center">{{ passion.running_time | date("G\\h\\ i\\m\\n\\ s\\s")}}</td>
                     <td class="text-center">{{ passion.rank }}<sup>ème</sup></td>
                     <td class="text-center">{{ passion.participants }}</td>
                     <td class="text-center">

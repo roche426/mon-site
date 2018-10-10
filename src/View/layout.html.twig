@@ -1,12 +1,20 @@
 <!doctype html>
-<html lang="fr">
+<html lang="fr" prefix="og: http://ogp.me/ns#">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="description" content="{% block description %}Découvrez mes compétences, mes projets ainsi que ma personnalité à travers ce site{% endblock %}"/>
+        <meta name="keyword" content="Développeur, Web, PHP, Symfony, Aurelien, Roche"/>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="google-site-verification" content="fJFtLHFPz5k-jyHu3Jbg4yVdvI9BTNeU_EwGd9lWDGA" />
-
         <title> Aurélien ROCHE - {% block title %}Développeur{% endblock %}</title>
+
+        {% block socialMeta %}
+            <meta property="og:title" content="Aurélien Roche - Développeur" />
+            <meta property="og:type" content="website" />
+            <meta property="og:url" content="http://www.aurelien-roche.fr" />
+            <meta property="og:image:url" content="http://www.aurelien-roche.fr/assets/images/home.png" />
+        {% endblock %}
 
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
               integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -19,20 +27,18 @@
     <body>
 
         <header>
-            <div class="pt-5 mb-2" align="center">
+            <div class="container-fluid pt-5 mb-2" align="center">
                 <h1><b class="font-weight-bold">Aurélien ROCHE - Développeur WEB</b></h1>
                 <div class="row mt-5 menu">
-                    <div class="col-sm-3 offset-sm-3">
+                    <div class="col-sm-2 offset-sm-3">
                         <a href="/"><h4 class="font-weight-bold {{ page == 'home' ? 'active' }}">A propos</h4></a>
                     </div>
-                    <div class="col-sm-3">
+                    <div class="col-sm-2">
                         <a href="/contact"><h4 class="font-weight-bold {{ page == 'contact' ? 'active' }}">Contact</h4></a>
                     </div>
-                    <!--
                     <div class="col-md-2">
                         <a href="/passion"><h4 class="font-weight-bold  {{ page == 'passion' ? 'active' }}">Passion</h4></a>
                     </div>
-                    -->
                     {% block user %}
                     {% endblock %}
                 </div>
@@ -45,7 +51,6 @@
                 <h5 class="font-weight-bold">{{ message }}</h5>
             </div>
         {% endif %}
-
 
         <div class="container pb-5" align="center">
             {% block content %}{% endblock %}

@@ -51,4 +51,9 @@ header{
     border-bottom: 10px solid #dfb100;
 }
 
+.row{
+    margin-right: 0;
+    margin-left: 0;
+}
+
 
