@@ -4,10 +4,13 @@
     <list default="true" id="304656d2-46aa-42b2-b45a-3d93fad3f645" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/Admin/addPassion.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Admin/addPassion.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/Admin/connexion.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Admin/connexion.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/Admin/editPassion.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Admin/editPassion.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/Admin/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Admin/index.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/Admin/welcome.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Admin/welcome.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/Contact/contact.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Contact/contact.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/Passion/passion.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Passion/passion.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/layout.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/layout.html.twig" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -22,16 +25,17 @@
     <session id="984986929">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="8" />
+          <entry key="project.closed" value="11" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.11" value="2" />
-          <entry key="project.open.time.14" value="1" />
+          <entry key="project.open.time.12" value="1" />
+          <entry key="project.open.time.14" value="2" />
           <entry key="project.open.time.16" value="1" />
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.8" value="1" />
-          <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="9" />
+          <entry key="project.open.time.9" value="2" />
+          <entry key="project.opened" value="12" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -42,7 +46,7 @@
           <entry key="js" value="2" />
           <entry key="json" value="5" />
           <entry key="php" value="34" />
-          <entry key="twig" value="42" />
+          <entry key="twig" value="54" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
@@ -51,7 +55,7 @@
           <entry key="JavaScript" value="2" />
           <entry key="PHP" value="34" />
           <entry key="PLAIN_TEXT" value="2" />
-          <entry key="Twig" value="42" />
+          <entry key="Twig" value="54" />
           <entry key="composer.json" value="5" />
           <entry key="htaccess" value="1" />
         </counts>
@@ -63,7 +67,7 @@
           <entry key="js" value="185" />
           <entry key="json" value="12" />
           <entry key="php" value="6411" />
-          <entry key="twig" value="7456" />
+          <entry key="twig" value="8045" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -73,7 +77,7 @@
           <entry key="PHP" value="6370" />
           <entry key="PLAIN_TEXT" value="43" />
           <entry key="SQL" value="41" />
-          <entry key="Twig" value="7456" />
+          <entry key="Twig" value="8045" />
           <entry key="composer.json" value="12" />
         </counts>
       </usages-collector>
@@ -81,38 +85,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/View/Passion/passion.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="296">
-              <caret line="62" column="80" selection-start-line="62" selection-start-column="80" selection-end-line="62" selection-end-column="80" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/View/Admin/index.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/View/Admin/welcome.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="54">
-              <caret line="3" column="43" selection-start-line="3" selection-start-column="43" selection-end-line="3" selection-end-column="43" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/View/Admin/addPassion.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="54">
-              <caret line="3" selection-start-line="3" selection-end-line="4" />
+            <state relative-caret-position="18">
+              <caret line="1" selection-start-line="1" selection-end-line="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/View/Admin/connexion.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="18">
+              <caret line="1" selection-start-line="1" selection-end-line="1" />
             </state>
           </provider>
         </entry>
@@ -120,8 +106,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/View/Admin/editPassion.html.twig">
           <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="18">
+              <caret line="1" selection-start-line="1" selection-end-line="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/View/Admin/index.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="36">
+              <caret line="2" column="84" selection-start-line="2" selection-start-column="84" selection-end-line="2" selection-end-column="84" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/View/Admin/welcome.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="54">
-              <caret line="3" column="43" selection-start-line="3" selection-start-column="43" selection-end-line="3" selection-end-column="43" />
+              <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
             </state>
           </provider>
         </entry>
@@ -149,7 +153,6 @@
         <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/src/View/Contact/mail.html.twig" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/src/View/Contact/contact.html.twig" />
         <option value="$PROJECT_DIR$/src/Model/User.php" />
         <option value="$PROJECT_DIR$/src/View/Admin/contact.html.twig" />
         <option value="$PROJECT_DIR$/src/Model/UserManager.php" />
@@ -157,7 +160,6 @@
         <option value="$PROJECT_DIR$/src/Controller/CurriculumController.php" />
         <option value="$PROJECT_DIR$/public/index.php" />
         <option value="$PROJECT_DIR$/src/Model/Contact.php" />
-        <option value="$PROJECT_DIR$/src/View/Admin/connexion.html.twig" />
         <option value="$PROJECT_DIR$/src/Model/ContactManager.php" />
         <option value="$PROJECT_DIR$/public/assets/js/index.js" />
         <option value="$PROJECT_DIR$/src/View/Admin/formPassion.html.twig" />
@@ -168,15 +170,17 @@
         <option value="$PROJECT_DIR$/app/routing.php" />
         <option value="$PROJECT_DIR$/app/db.php" />
         <option value="$PROJECT_DIR$/src/Controller/ContactController.php" />
-        <option value="$PROJECT_DIR$/src/View/layout.html.twig" />
         <option value="$PROJECT_DIR$/src/View/index.html.twig" />
         <option value="$PROJECT_DIR$/public/assets/css/styles.css" />
         <option value="$PROJECT_DIR$/src/View/Admin/logout.html.twig" />
-        <option value="$PROJECT_DIR$/src/View/Admin/addPassion.html.twig" />
+        <option value="$PROJECT_DIR$/src/View/Contact/contact.html.twig" />
+        <option value="$PROJECT_DIR$/src/View/Passion/passion.html.twig" />
+        <option value="$PROJECT_DIR$/src/View/layout.html.twig" />
         <option value="$PROJECT_DIR$/src/View/Admin/editPassion.html.twig" />
+        <option value="$PROJECT_DIR$/src/View/Admin/addPassion.html.twig" />
+        <option value="$PROJECT_DIR$/src/View/Admin/connexion.html.twig" />
         <option value="$PROJECT_DIR$/src/View/Admin/index.html.twig" />
         <option value="$PROJECT_DIR$/src/View/Admin/welcome.html.twig" />
-        <option value="$PROJECT_DIR$/src/View/Passion/passion.html.twig" />
       </list>
     </option>
   </component>
@@ -197,7 +201,7 @@
       <path value="$PROJECT_DIR$/vendor/twig/extensions" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-24" />
     <option name="y" value="-4" />
     <option name="width" value="920" />
@@ -209,6 +213,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -264,11 +269,17 @@
               <item name="View" type="462c0819:PsiDirectoryNode" />
               <item name="Admin" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="mon-site" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mon-site" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="View" type="462c0819:PsiDirectoryNode" />
+              <item name="Contact" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -321,12 +332,15 @@
       <workItem from="1538927358377" duration="5516000" />
       <workItem from="1538988144275" duration="4126000" />
       <workItem from="1539068553305" duration="6708000" />
-      <workItem from="1539091571963" duration="712000" />
+      <workItem from="1539091571963" duration="897000" />
+      <workItem from="1539094477490" duration="1471000" />
+      <workItem from="1539104426030" duration="1201000" />
+      <workItem from="1539161003709" duration="608000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="96904000" />
+    <option name="totallyTimeSpent" value="100369000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -341,7 +355,7 @@
     <frame x="-1" y="-11" width="1922" height="1041" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1995731" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20597652" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -499,13 +513,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/Contact/contact.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="566">
-          <caret line="60" column="14" lean-forward="true" selection-start-line="60" selection-start-column="14" selection-end-line="60" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/UserController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-237">
@@ -551,13 +558,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/layout.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="98">
-          <caret line="21" column="39" selection-start-line="21" selection-start-column="39" selection-end-line="21" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/assets/css/styles.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="437">
@@ -567,8 +567,57 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/View/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="12" column="52" selection-start-line="12" selection-start-column="52" selection-end-line="12" selection-end-column="52" />
+        <state relative-caret-position="231">
+          <caret line="24" column="24" lean-forward="true" selection-start-line="21" selection-start-column="19" selection-end-line="24" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/View/Passion/passion.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="90" selection-start-line="2" selection-start-column="90" selection-end-line="2" selection-end-column="90" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/View/Contact/contact.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" selection-start-line="2" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/View/layout.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="5" column="176" selection-start-line="5" selection-start-column="176" selection-end-line="5" selection-end-column="176" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/View/Admin/addPassion.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/View/Admin/connexion.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/View/Admin/editPassion.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/View/Admin/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="84" selection-start-line="2" selection-start-column="84" selection-end-line="2" selection-end-column="84" />
         </state>
       </provider>
     </entry>
@@ -579,45 +628,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/Admin/addPassion.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="3" selection-start-line="3" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/Admin/connexion.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="32" selection-start-line="3" selection-end-line="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/Admin/editPassion.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="3" column="43" selection-start-line="3" selection-start-column="43" selection-end-line="3" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/Admin/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/View/Admin/welcome.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="54">
-          <caret line="3" column="43" selection-start-line="3" selection-start-column="43" selection-end-line="3" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/Passion/passion.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="62" column="80" selection-start-line="62" selection-start-column="80" selection-end-line="62" selection-end-column="80" />
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
         </state>
       </provider>
     </entry>
