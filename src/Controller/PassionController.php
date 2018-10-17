@@ -35,45 +35,46 @@ class PassionController extends AbstractController
     {
         session_start();
 
-        if (!$_SESSION['email']) {
-            return $this->twig->render('Admin/connexion.html.twig');
-        }
+        if ($_SESSION['email']) {
 
-        $errors = array();
-        $formValue = array();
-        $message = '';
+            $errors = array();
+            $formValue = array();
+            $message = '';
 
-        $validator = new Validator();
+            $validator = new Validator();
 
-        if ($_POST) {
+            if ($_POST) {
 
-            foreach ($_POST as $item=>$value) {
+                foreach ($_POST as $item => $value) {
 
-                if (!$validator->blank($value)) {
-                    $errors[$item] .= 'Ce champs ne doit pas être vide ';
+                    if (!$validator->blank($value)) {
+                        $errors[$item] .= 'Ce champs ne doit pas être vide ';
+                    }
+
+                    if (!$validator->minNumber($value) && is_numeric($value)) {
+                        $errors[$item] .= 'La valeur minimal doit être égale à 1';
+                    }
+
+                    $formValue[$item] .= htmlentities($value);
                 }
 
-                if (!$validator->minNumber($value) && is_numeric($value)) {
-                    $errors[$item] .= 'La valeur minimal doit être égale à 1';
+                if (!count(array_filter($errors))) {
+
+                    $passionManager = new PassionManager();
+                    $passionManager->addPassion($formValue);
+
+                    $message = 'Votre course à été ajoutée';
                 }
-
-                $formValue[$item] .= htmlentities($value);
             }
 
-            if (!count(array_filter($errors))) {
-
-                $passionManager = new PassionManager();
-                $passionManager->addPassion($formValue);
-
-                $message = 'Votre course à été ajoutée';
-            }
+            return $this->twig->render('Admin/addPassion.html.twig', [
+                'errors' => $errors,
+                'formValue' => $formValue,
+                'message' => $message
+            ]);
         }
 
-        return $this->twig->render('Admin/addPassion.html.twig', [
-            'errors' => $errors,
-            'formValue' => $formValue,
-            'message' => $message
-        ]);
+        header('location: /admin');
     }
 
 
@@ -81,49 +82,50 @@ class PassionController extends AbstractController
     {
         session_start();
 
-        if (!$_SESSION['email']) {
-            return $this->twig->render('Admin/connexion.html.twig');
-        }
+        if ($_SESSION['email']) {
 
-        $passionManager = new PassionManager();
+            $passionManager = new PassionManager();
 
-        $errors = array();
-        $formValue = array();
-        $message = '';
+            $errors = array();
+            $formValue = array();
+            $message = '';
 
-        $validator = new Validator();
+            $validator = new Validator();
 
-        if ($_POST) {
+            if ($_POST) {
 
-            foreach ($_POST as $item=>$value) {
+                foreach ($_POST as $item => $value) {
 
-                if (!$validator->blank($value)) {
-                    $errors[$item] .= 'Ce champs ne doit pas être vide ';
+                    if (!$validator->blank($value)) {
+                        $errors[$item] .= 'Ce champs ne doit pas être vide ';
+                    }
+
+                    if (!$validator->minNumber($value) && is_numeric($value)) {
+                        $errors[$item] .= 'La valeur minimal doit être égale à 1';
+                    }
+
+                    $formValue[$item] .= htmlentities($value);
                 }
 
-                if (!$validator->minNumber($value) && is_numeric($value)) {
-                    $errors[$item] .= 'La valeur minimal doit être égale à 1';
+                if (!count(array_filter($errors))) {
+
+                    $passionManager = new PassionManager();
+                    $passionManager->editPassion($formValue, $id);
+
+                    $message = 'Votre course à été modifiée';
                 }
-
-                $formValue[$item] .= htmlentities($value);
             }
 
-            if (!count(array_filter($errors))) {
+            $passion = $passionManager->selectOneById($id);
 
-                $passionManager = new PassionManager();
-                $passionManager->editPassion($formValue, $id);
-
-                $message = 'Votre course à été modifiée';
-            }
+            return $this->twig->render('Admin/editPassion.html.twig', [
+                'passion' => $passion,
+                'errors' => $errors,
+                'message' => $message
+            ]);
         }
 
-        $passion = $passionManager->selectOneById($id);
-
-        return $this->twig->render('Admin/editPassion.html.twig', [
-            'passion' => $passion,
-            'errors' => $errors,
-            'message' => $message
-        ]);
+        header('location: /admin');
     }
 
 
