@@ -129,9 +129,12 @@ class PassionController extends AbstractController
 
     public function deletePassion($id)
     {
-        $contactManager = new PassionManager();
-        $contactManager->deletePassion($id);
+        if ($_SESSION['email']) {
+
+            $contactManager = new PassionManager();
+            $contactManager->deletePassion($id);
+        }
+
         header('location: /admin');
     }
-
 }
