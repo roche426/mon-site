@@ -11,14 +11,14 @@
             <form action="/connexion" method="post">
                 <div class="row my-5">
                     <div class="form-group col-md-6 offset-md-3">
-                        <input type="text" class="form-control" name="email" placeholder="Email *"
+                        <input type="email" class="form-control" name="email" placeholder="Email *" required
                                value="{{ formValue['email'] ?: formValue['email'] }}">
                         <small class="text-danger">{{ errors['email'] ?: errors['email'] }}</small>
                     </div>
                 </div>
                 <div class="row my-5">
                     <div class="form-group col-md-6 offset-md-3">
-                        <input type="password" class="form-control" name="password" placeholder="Mot de passe *">
+                        <input type="password" class="form-control" name="password" placeholder="Mot de passe *" required>
                         <small class="text-danger">{{ errors['password'] ?: errors['password'] }}</small>
                     </div>
                 </div>
