@@ -23,7 +23,7 @@ class ContactController extends AbstractController
         if ($_POST) {
 
         // Ma clé privée
-        $secret = "6Lf6sHMUAAAAALV4k6RZcWaogxkIGCoVjqvRLbKf";
+        $secret = GOOGLE_KEY;
         // Paramètre renvoyé par le recaptcha
         $response = $_POST['g-recaptcha-response'];
         // On récupère l'IP de l'utilisateur
