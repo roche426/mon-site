@@ -12,6 +12,7 @@ namespace Controller;
 use Model\ContactManager;
 use Model\PassionManager;
 use Model\UserManager;
+use Model\Validator;
 
 /**
  * Class UserController
@@ -23,45 +24,51 @@ class UserController extends AbstractController
     {
         session_start();
 
-        $errorMessage = array();
-
         if ($_SESSION['email']) {
             return $this->twig->render('Admin/index.html.twig');
         }
 
+        $connexionError = null;
+        $errors = array();
+        $formValue = array();
+
         if ($_POST) {
 
-            if (!empty($_POST['email'] && !empty($_POST['password']))) {
-                $email = $_POST['email'];
-                $password = $_POST['password'];
+            $validator = new Validator();
 
-                $userManager = new UserManager();
-                $user = $userManager->userConnexion($email);
+            foreach ($_POST as $item=>$value) {
 
-                if ($user) {
-                    if (password_verify($password, $user->getPassword())) {
-                        $_SESSION['id'] = $user->getId();
-                        $_SESSION['email'] = $email;
-
-                        return $this->twig->render('Admin/welcome.html.twig');
-                    }
-                        $errorMessage = ['inputEmail' => $_POST['email'], 'inputPassword' => $_POST['password']];
+                if (!$validator->blank($value)) {
+                    $errors[$item] .= 'Ce champs ne doit pas être vide ';
                 }
 
-                else {
-                    $errorMessage = ['inputEmail' => $_POST['email']];
+                elseif ($validator->emailVerify($_POST['email'])) {
+                    $errors['email'] = 'Format de l\'email invalide';
                 }
+
+                $formValue[$item] .= htmlentities($value);
             }
 
-            else {
-                $errorMessage = ['inputEmail' => $_POST['email'], 'inputPassword' => $_POST['password']];
+            if (!count(array_filter($errors))) {
+                $userManager = new UserManager();
+                $user = $userManager->userConnexion(htmlentities($_POST['email']));
+
+                if ($user && password_verify(htmlentities($_POST['password']), $user->getPassword())) {
+                    $_SESSION['id'] = $user->getId();
+                    $_SESSION['email'] = $_POST['email'];
+
+                    return $this->twig->render('Admin/welcome.html.twig');
+                }
+
+                $connexionError = 'Mot de passe ou email invalide';
             }
         }
 
         return $this->twig->render('Admin/connexion.html.twig',[
-            'errorMessage' => $errorMessage
+            'errors' => $errors,
+            'formValue' => $formValue,
+            'connexionError' => $connexionError
         ]);
-
     }
 
     public function index()
@@ -88,6 +95,10 @@ class UserController extends AbstractController
 
     public function logout()
     {
+        if ($_SESSION['email']) {
+            return $this->twig->render('Admin/index.html.twig');
+        }
+
         session_start();
         session_destroy();
         return header('location: /connexion');

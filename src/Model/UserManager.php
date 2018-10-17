@@ -21,7 +21,7 @@ class UserManager extends AbstractManager
         parent::__construct(self::TABLE);
     }
 
-    public function userConnexion(string $email)
+    public function userConnexion($email)
     {
         // prepared request
         $statement = $this->pdoConnection->prepare("SELECT * FROM $this->table WHERE email=:email");
