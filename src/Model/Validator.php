@@ -21,5 +21,10 @@ class Validator
    {
         return !($numberData <1);
    }
+
+   public function emailVerify($email)
+   {
+        return !filter_var($email, FILTER_VALIDATE_EMAIL);
+   }
 }
 

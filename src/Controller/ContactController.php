@@ -20,7 +20,10 @@ class ContactController extends AbstractController
 
     public function index()
     {
+        if ($_POST) {
+
         // Ma clé privée
+        $secret = GOOGLE_KEY;
         // Paramètre renvoyé par le recaptcha
         $response = $_POST['g-recaptcha-response'];
         // On récupère l'IP de l'utilisateur
@@ -33,10 +36,8 @@ class ContactController extends AbstractController
 
         $decode = json_decode(file_get_contents($api_url), true);
 
-        if ($_POST) {
-
             if (!empty($_POST['firstName']) && !empty($_POST['lastName']) && !empty($_POST['mail']) && !empty($_POST['message'])
-            && $decode['success'] == true) {
+                && $decode['success'] == true) {
 
                 $contact = [
                     'firstName' => htmlentities($_POST['lastName']),
