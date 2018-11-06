@@ -23,47 +23,37 @@
                 <form action="/contact" method="post">
                     <div class="row mt-3">
                         <div class="form-group col-md-4 offset-md-2">
-                            <input type="text" class="form-control" name="firstName" placeholder="Prénom *" required
-                            {% if inputValue['firstName'] is not empty%} value="{{ inputValue['firstName'] }}" {% endif %}/>
-                            {% if inputValue['firstName'] is defined and inputValue['firstName'] is empty %}
-                                <small class="text-danger">Ce champs ne doit pas être vide</small>
-                            {% endif %}
-
+                            <input type="text" class="form-control" name="firstName" placeholder="Prénom *"
+                                   value="{{ formValue['firstName'] ?: formValue['firstName'] }}">
+                            <small class="text-danger">{{ errors['firstName'] ?: errors['firstName'] }}</small>
                         </div>
                         <div class="form-group col-md-4">
-                            <input type="text" class="form-control" name="lastName" placeholder="Nom *" required
-                            {% if inputValue['lastName'] is not empty%} value="{{ inputValue['lastName'] }}" {% endif %}/>
-                            {% if inputValue['lastName'] is defined and inputValue['lastName'] is empty %}
-                                <small class="text-danger">Ce champs ne doit pas être vide</small>
-                            {% endif %}
+                            <input type="text" class="form-control" name="lastName" placeholder="Nom *"
+                                   value="{{ formValue['lastName'] ?: formValue['lastName'] }}">
+                            <small class="text-danger">{{ errors['lastName'] ?: errors['lastName'] }}</small>
                         </div>
                     </div>
                     <div class="row mt-3">
                         <div class="form-group col-md-4 offset-md-2">
-                            <input type="email" class="form-control" name="mail" placeholder="Email *" required
-                            {% if inputValue['mail'] is not empty%} value="{{ inputValue['mail'] }}" {% endif %}/>
-                            {% if inputValue['mail'] is defined and inputValue['mail'] is empty %}
-                                <small class="text-danger">Ce champs ne doit pas être vide</small>
-                            {% endif %}
+                            <input type="email" class="form-control" name="mail" placeholder="Email *"
+                                   value="{{ formValue['mail'] ?: formValue['mail'] }}">
+                            <small class="text-danger">{{ errors['mail'] ?: errors['mail'] }}</small>
                         </div>
                         <div class="form-group col-md-4">
                             <input type="text" class="form-control" name="phoneNumber" placeholder="Téléphone"
-                            {% if inputValue['phoneNumber'] is not empty%} value="{{ inputValue['phoneNumber'] }}" {% endif %}/>
+                                   value="{{ formValue['phoneNumber'] ?: formValue['phoneNumber'] }}">
                         </div>
                     </div>
                     <div class="row mt-3">
                         <div class="form-group col-md-8 offset-md-2">
-                            <textarea class="form-control" rows="5" placeholder="Votre message *" name="message" required
-                                >{% if inputValue['message'] is not empty %} {{ inputValue['message'] }} {% endif %}</textarea>
-                            {% if inputValue['message'] is defined and inputValue['message'] is empty %}
-                                <small class="text-danger">Ce champs ne doit pas être vide</small>
-                            {% endif %}
+                            <textarea class="form-control" rows="5" placeholder="Votre message *" name="message">
+                                {{ formValue['message'] ?: formValue['message'] }}
+                            </textarea>
+                            <small class="text-danger">{{ errors['message'] ?: errors['message'] }}</small>
                         </div>
                     </div>
-                    {% if inputValue['recaptcha'] is defined and inputValue['recaptcha'] == false %}
-                        <small class="text-danger">Merci de cocher "Je ne suis pas un robot"</small>
-                    {% endif %}
-                    <div class="g-recaptcha mt-3" data-sitekey="6Lf6sHMUAAAAAHPHZLQuv_ZadwdwvhcT0sB2rwt5"></div>
+               <!--     <small class="text-danger">{{ errors['recaptcha'] ?: errors['recaptcha'] }}</small>
+                    <div class="g-recaptcha mt-3" data-sitekey="6Lf6sHMUAAAAAHPHZLQuv_ZadwdwvhcT0sB2rwt5"></div>-->
                     <input class="btn btn-dark bg-black mt-4" type="submit" value="Envoyer">
                 </form>
             </div>

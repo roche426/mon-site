@@ -28,9 +28,9 @@ class ContactManager extends AbstractManager
             `email`=:email, `phone`=:numberPhone, `message`=:messageContact , `date`=:dateMessage");
         $statement->bindValue('firstName', $contact['firstName'], \PDO::PARAM_STR);
         $statement->bindValue('lastName', $contact['lastName'], \PDO::PARAM_STR);
-        $statement->bindValue('email', $contact['email'], \PDO::PARAM_STR);
-        $statement->bindValue('messageContact', $contact['messageContact'], \PDO::PARAM_STR);
-        $statement->bindValue('numberPhone', $contact['numberPhone'], \PDO::PARAM_STR);
+        $statement->bindValue('email', $contact['mail'], \PDO::PARAM_STR);
+        $statement->bindValue('messageContact', $contact['message'], \PDO::PARAM_STR);
+        $statement->bindValue('numberPhone', $contact['phoneNumber'], \PDO::PARAM_STR);
         $statement->bindValue('dateMessage', $contact['date'], \PDO::PARAM_STR);
         $statement->setFetchMode(\PDO::FETCH_CLASS, $this->className);
         $statement->execute();
