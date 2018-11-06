@@ -22,7 +22,7 @@ class PassionController extends AbstractController
     public function index()
     {
         $passionManager = new PassionManager();
-        $passions = $passionManager->selectAll();
+        $passions = $passionManager->selectAllByDate();
 
         $page = 'passion';
         return $this->twig->render('Passion/passion.html.twig', [
