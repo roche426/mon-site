@@ -55,7 +55,7 @@ class PassionController extends AbstractController
                         $errors[$item] .= 'La valeur minimal doit être égale à 1';
                     }
 
-                    $formValue[$item] .= htmlentities($value);
+                    $formValue[$item] .= htmlspecialchars($value);
                 }
 
                 if (!count(array_filter($errors))) {
@@ -105,7 +105,7 @@ class PassionController extends AbstractController
                         $errors[$item] .= 'La valeur minimal doit être égale à 1';
                     }
 
-                    $formValue[$item] .= htmlentities($value);
+                    $formValue[$item] .= htmlspecialchars($value);
                 }
 
                 if (!count(array_filter($errors))) {

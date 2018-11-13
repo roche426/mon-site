@@ -50,7 +50,7 @@ class ContactController extends AbstractController
                     $errors['email'] = 'Format de l\'email invalide';
                 }
 
-                $formValue[$item] .= htmlentities($value);
+                $formValue[$item] .= htmlspecialchars($value);
             }
 
             if (!count(array_filter(array_diff_key($errors, ['phoneNumber' => null]))) && $decode['success'] == true) {
