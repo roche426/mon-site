@@ -64,6 +64,7 @@ class PassionController extends AbstractController
                     $passionManager->addPassion($formValue);
 
                     $message = 'Votre course à été ajoutée';
+                    $formValue = null;
                 }
             }
 
