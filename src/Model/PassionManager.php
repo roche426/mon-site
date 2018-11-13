@@ -61,15 +61,6 @@ class PassionManager extends AbstractManager
         $statement->execute();
     }
 
-    /*public function selectAllByDate()
-    {
-        $statement = $this->pdoConnection->prepare("SELECT * FROM $this->table ORDER BY 'date' DESC");
-        $statement->setFetchMode(\PDO::FETCH_CLASS, $this->className);
-        $statement->execute();
-
-        return $statement->fetch();
-    }*/
-
     public function selectAllByDate(): array
     {
         // prepared request

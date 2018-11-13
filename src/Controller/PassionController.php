@@ -131,6 +131,8 @@ class PassionController extends AbstractController
 
     public function deletePassion($id)
     {
+        session_start();
+
         if ($_SESSION['email']) {
 
             $contactManager = new PassionManager();
