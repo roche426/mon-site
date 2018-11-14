@@ -83,7 +83,7 @@ class UserController extends AbstractController
         $contacts = $contactManager->selectAll();
 
         $passionManager = new PassionManager();
-        $passions = $passionManager->selectAll();
+        $passions = $passionManager->selectAllByDate();
 
         return $this->twig->render('Admin/index.html.twig', [
             'contacts' => $contacts,

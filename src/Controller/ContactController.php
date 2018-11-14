@@ -21,10 +21,14 @@ class ContactController extends AbstractController
 
     public function index()
     {
+        $errors = array();
+        $formValue = array();
+        $message = null;
+
         if ($_POST) {
 
             //Captcha
-           /* $secret = GOOGLE_KEY;
+            $secret = GOOGLE_KEY;
             $response = $_POST['g-recaptcha-response'];
             $remoteip = $_SERVER['REMOTE_ADDR'];
 
@@ -34,10 +38,6 @@ class ContactController extends AbstractController
                 . "&remoteip=" . $remoteip ;
 
             $decode = json_decode(file_get_contents($api_url), true);
-            && $decode['success'] == true*/
-
-            $errors = array();
-            $formValue = array();
 
             $validator = new Validator();
 
@@ -50,10 +50,10 @@ class ContactController extends AbstractController
                     $errors['email'] = 'Format de l\'email invalide';
                 }
 
-                $formValue[$item] .= htmlentities($value);
+                $formValue[$item] .= htmlspecialchars($value);
             }
 
-            if (!count(array_filter(array_diff_key($errors, ['phoneNumber' => null])))) {
+            if (!count(array_filter(array_diff_key($errors, ['phoneNumber' => null]))) && $decode['success'] == true) {
 
                 $formValue['date'] .= date('Y/m/d');
                 $contactManager = new ContactManager();
@@ -65,6 +65,7 @@ class ContactController extends AbstractController
                 );
 
                 $message = 'Votre message a bien été envoyé, je vous répondrai dans les plus brefs délais';
+                $formValue = null;
             }
 
             else {
@@ -83,6 +84,8 @@ class ContactController extends AbstractController
 
     public function deleteContact($id)
     {
+        session_start();
+
         if ($_SESSION['email']) {
 
             $contactManager = new ContactManager();

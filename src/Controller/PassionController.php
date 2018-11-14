@@ -55,7 +55,7 @@ class PassionController extends AbstractController
                         $errors[$item] .= 'La valeur minimal doit être égale à 1';
                     }
 
-                    $formValue[$item] .= htmlentities($value);
+                    $formValue[$item] .= htmlspecialchars($value);
                 }
 
                 if (!count(array_filter($errors))) {
@@ -64,6 +64,7 @@ class PassionController extends AbstractController
                     $passionManager->addPassion($formValue);
 
                     $message = 'Votre course à été ajoutée';
+                    $formValue = null;
                 }
             }
 
@@ -104,7 +105,7 @@ class PassionController extends AbstractController
                         $errors[$item] .= 'La valeur minimal doit être égale à 1';
                     }
 
-                    $formValue[$item] .= htmlentities($value);
+                    $formValue[$item] .= htmlspecialchars($value);
                 }
 
                 if (!count(array_filter($errors))) {
@@ -131,6 +132,8 @@ class PassionController extends AbstractController
 
     public function deletePassion($id)
     {
+        session_start();
+
         if ($_SESSION['email']) {
 
             $contactManager = new PassionManager();
